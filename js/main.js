@@ -24,10 +24,13 @@ async function fetchMealData() {
                                     <div class="imgCont">
                                         <img src="${recipes.strMealThumb}">
                                     </div>
+
+                                    <div class= "mealInfo">
                                         <p><b>${recipes.strMeal}</b></p>
                                         <p>Area: ${recipes.strArea}</p>
                                         <p>Category: ${recipes.strCategory}</p>
-                                        <a href = ${recipes.strYoutube} target="_blank">Watch on Youtube</a>
+                                        <a href = ${recipes.strYoutube} target="_blank">Watch tutorial on Youtube</a>
+                                    </div>
                                 </div>
 
                                 <div class = contents>
@@ -61,7 +64,7 @@ async function fetchMealData() {
 async function generateRandom() {
     try {
         let container = document.getElementById("resultCont");
-        container.innerHTML = "<p>Finding your recipe...</p>";
+        container.innerHTML = "<p>Finding a random recipe...</p>";
 
         const response = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
         let data = await response.json();
@@ -76,10 +79,12 @@ async function generateRandom() {
                                 <div class="imgCont">
                                     <img src="${recipes.strMealThumb}">
                                 </div>
-                                <p><b>${recipes.strMeal}</b></p>
-                                <p>Area: ${recipes.strArea}</p>
-                                <p>Category: ${recipes.strCategory}</p>
-                                <a href = ${recipes.strYoutube} target="_blank">Watch on Youtube</a>
+                                <div class= "mealInfo">
+                                    <p><b>${recipes.strMeal}</b></p>
+                                    <p>Area: ${recipes.strArea}</p>
+                                    <p>Category: ${recipes.strCategory}</p>
+                                    <a href = ${recipes.strYoutube} target="_blank">Watch tutorial on Youtube</a>
+                                </div>
                             </div>
 
                             <div class = contents>
